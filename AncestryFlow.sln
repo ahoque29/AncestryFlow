@@ -4,9 +4,20 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "AncestryFlow.Core", "Ancest
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "AncestryFlow.Website", "AncestryFlow.Website", "{E71AC911-A2C0-4A7D-9125-C8E903A6EA71}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common", "Common\Common.csproj", "{BDE507B2-A3CD-4714-AE88-A6FD016E5733}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{BDE507B2-A3CD-4714-AE88-A6FD016E5733} = {25ACEE87-3272-4A71-80F4-D4EB8CF7335A}
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BDE507B2-A3CD-4714-AE88-A6FD016E5733}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BDE507B2-A3CD-4714-AE88-A6FD016E5733}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BDE507B2-A3CD-4714-AE88-A6FD016E5733}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BDE507B2-A3CD-4714-AE88-A6FD016E5733}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
