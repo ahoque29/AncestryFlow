@@ -8,6 +8,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common", "Common\Common.csp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAccess", "DataAccess\DataAccess.csproj", "{10BABB94-4EA1-4068-9A60-BE903A424515}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "AncestryFlow.TestConsole", "AncestryFlow.TestConsole", "{7AF71784-A5C4-4DB0-8DB3-90AB77A13F53}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestConsole", "TestConsole\TestConsole.csproj", "{70BA62F4-199A-486E-AD53-5913F978162E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -16,6 +20,7 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{BDE507B2-A3CD-4714-AE88-A6FD016E5733} = {25ACEE87-3272-4A71-80F4-D4EB8CF7335A}
 		{10BABB94-4EA1-4068-9A60-BE903A424515} = {25ACEE87-3272-4A71-80F4-D4EB8CF7335A}
+		{70BA62F4-199A-486E-AD53-5913F978162E} = {7AF71784-A5C4-4DB0-8DB3-90AB77A13F53}
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{BDE507B2-A3CD-4714-AE88-A6FD016E5733}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -26,5 +31,9 @@ Global
 		{10BABB94-4EA1-4068-9A60-BE903A424515}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{10BABB94-4EA1-4068-9A60-BE903A424515}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{10BABB94-4EA1-4068-9A60-BE903A424515}.Release|Any CPU.Build.0 = Release|Any CPU
+		{70BA62F4-199A-486E-AD53-5913F978162E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{70BA62F4-199A-486E-AD53-5913F978162E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{70BA62F4-199A-486E-AD53-5913F978162E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{70BA62F4-199A-486E-AD53-5913F978162E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
