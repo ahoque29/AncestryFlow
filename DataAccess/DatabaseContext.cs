@@ -7,6 +7,7 @@ public class DatabaseContext : DbContext
 {
     // Used by Ef Core to map the Member class to the Members table.
     // ReSharper disable once UnusedMember.Global
+    // ReSharper disable once UnusedAutoPropertyAccessor.Global
     public DbSet<Member> Members { get; set; }
 
     public DatabaseContext()
