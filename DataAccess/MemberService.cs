@@ -27,49 +27,16 @@ public class MemberService(DatabaseContext context) : IMemberService
 
     public async Task EditMember(Member member)
     {
-        var existingMember = await GetMemberById(member.Id);
+        var existingMember = await CheckForExistingMember(member);
 
-        if (existingMember is null)
-        {
-            throw new ArgumentException("Member not found.");
-        }
-
-        if (member.FirstName != existingMember.FirstName)
-        {
-            existingMember.FirstName = member.FirstName;
-        }
-
-        if (member.LastName != existingMember.LastName)
-        {
-            existingMember.LastName = member.LastName;
-        }
-
-        if (member.Gender != existingMember.Gender)
-        {
-            existingMember.Gender = member.Gender;
-        }
-
-        if (member.FatherId is not null && member.FatherId != existingMember.FatherId)
-        {
-            existingMember.FatherId = member.FatherId;
-        }
-
-        if (member.MotherId is not null && member.MotherId != existingMember.MotherId)
-        {
-            existingMember.MotherId = member.MotherId;
-        }
+        UpdateMemberDetails(member, existingMember);
 
         await context.SaveChangesAsync();
     }
 
     public async Task DeleteMember(Member member)
     {
-        var existingMember = await GetMemberById(member.Id);
-
-        if (existingMember is null)
-        {
-            throw new ArgumentException("Member not found.");
-        }
+        var existingMember = await CheckForExistingMember(member);
 
         Members.Remove(existingMember);
         await context.SaveChangesAsync();
@@ -117,13 +84,44 @@ public class MemberService(DatabaseContext context) : IMemberService
             throw new AggregateException(invalidParents.Select(e => new ArgumentException(e)));
         }
     }
-}
 
-public interface IMemberService
-{
-    Task<Member?> GetMemberById(Guid id);
-    Task<IEnumerable<Member>> GetAllMembers();
-    Task AddMember(Member member);
-    Task EditMember(Member member);
-    Task DeleteMember(Member member);
+    private static void UpdateMemberDetails(Member member, Member existingMember)
+    {
+        if (member.FirstName != existingMember.FirstName)
+        {
+            existingMember.FirstName = member.FirstName;
+        }
+
+        if (member.LastName != existingMember.LastName)
+        {
+            existingMember.LastName = member.LastName;
+        }
+
+        if (member.Gender != existingMember.Gender)
+        {
+            existingMember.Gender = member.Gender;
+        }
+
+        if (member.FatherId is not null && member.FatherId != existingMember.FatherId)
+        {
+            existingMember.FatherId = member.FatherId;
+        }
+
+        if (member.MotherId is not null && member.MotherId != existingMember.MotherId)
+        {
+            existingMember.MotherId = member.MotherId;
+        }
+    }
+
+    private async Task<Member> CheckForExistingMember(Member member)
+    {
+        var existingMember = await GetMemberById(member.Id);
+
+        if (existingMember is null)
+        {
+            throw new ArgumentException("Member not found.");
+        }
+
+        return existingMember;
+    }
 }

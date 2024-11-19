@@ -4,3 +4,6 @@ obj/
 riderModule.iml
 /_ReSharper.Caches/
 *.user
+*.db
+*.db-shm
+*.db-wal
